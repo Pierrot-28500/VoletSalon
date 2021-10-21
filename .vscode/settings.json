@@ -1,0 +1,38 @@
+{
+    "arduino.path": "C:\\Program Files (x86)\\Arduino",
+    "arduino.commandPath": "arduino_debug.exe",
+    "arduino.logLevel": "info",
+    "arduino.enableUSBDetection": true,
+    "arduino.disableTestingOpen": false,
+    "arduino.skipHeaderProvider": false,
+    "arduino.additionalUrls": [
+        "https://raw.githubusercontent.com/VSChina/azureiotdevkit_tools/master/package_azureboard_index.json",
+        "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
+    ],
+    "arduino.defaultBaudRate": 115200,
+    "files.associations": {
+        "queue": "cpp",
+        "*.tcc": "cpp",
+        "istream": "cpp",
+        "exception": "cpp",
+        "deque": "cpp",
+        "vector": "cpp",
+        "*.inc": "cpp",
+        "fstream": "cpp",
+        "array": "cpp",
+        "functional": "cpp",
+        "iomanip": "cpp",
+        "limits": "cpp",
+        "ostream": "cpp",
+        "numeric": "cpp",
+        "streambuf": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "memory": "cpp",
+        "iostream": "cpp",
+        "sstream": "cpp",
+        "typeinfo": "cpp",
+        "bitset": "cpp",
+        "algorithm": "cpp"
+    }
+}
