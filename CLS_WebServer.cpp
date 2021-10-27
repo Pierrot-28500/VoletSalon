@@ -202,7 +202,7 @@ void CLS_WebServer::handleAht(WiFiClient client)
 void CLS_WebServer::handleSetHomeShuttle(WiFiClient client)
 {
     shutter.setHomePosition();
-    String response = getHttpHeadResponse(200, "OK", "text/plain", "", "Done");
+    String response = getHttpHeadResponse(200, "OK", "text/plain", "", "Reinitialisation position haute du volet");
     sendHttpResponse(client, response);
 }
 
