@@ -16,10 +16,7 @@
             "forcedInclude": [],
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "defines": [
-                "ARDUINO=10800",
-                "USBCON"
-            ]
+            "defines": ["ARDUINO=10800", "USBCON"]
         },
         {
             "name": "Arduino",

@@ -1,4 +1,6 @@
 
+//#include <stdc++.h>
+
 #ifndef _CLS_SHUTTER_H_
 #define _CLS_SHUTTER_H_
 

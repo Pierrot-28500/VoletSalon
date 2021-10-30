@@ -1,3 +1,6 @@
+
+//#include <stdc++.h>
+
 #ifndef _CLS_BMP_180_H
 #define _CLS_BMP_180_H
 

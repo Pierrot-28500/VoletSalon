@@ -1,3 +1,6 @@
+
+//#include <stdc++.h>
+
 #ifndef _CLS_AHT_10_H
 #define _CLS_AHT_10_H
 
@@ -8,16 +11,19 @@
 class CLS_Aht10
 {
 public:
+    bool hasRaed = false;
     sensors_event_t humidity;
     sensors_event_t temperature;
 
     CLS_Aht10();
     void init();
+    bool isI2CReadable();
+    bool hasValidRead();
     void doRead();
     String toTextPlain();
 
 protected:
-    const unsigned long BMP_180_READ_INTERVAL_TIME = 1000;
+    const unsigned long AHT_READ_INTERVAL_TIME = 1000;
     unsigned long lastReadTime = 0;
 
     void readAht10();

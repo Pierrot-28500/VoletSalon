@@ -46,19 +46,20 @@ void setup()
         delay(100);
     trace("Starting");
     trace("waiting 1 second for peripherals init");
-    delay(1000); // I2C peripherals wait ready
+    delay(1000); // I2C peripherals wait ready after power on
     trace("Wire initialization");
     Wire.begin();
     trace("i2C initialization");
     i2cScan.init();
     trace("waiting for MCP23017");
-    i2cScan.waitFor(MCP23017_ADDRESS); // wait for I2C shutters GPIOs
+    i2cScan.waitFor(MCP23017_ADDRESS); // wait for I2C GPIOs
     trace("Mcp23017 GPIOs initialization");
     mcp23017.init();
     trace("shutter initialization");
     shutter.init(&mcp23017, BTN_UP_PIN, BTN_DOWN_PIN, CMD_UP_PIN, CMD_DOWN_PIN);
+    /*
     trace("I2C ath-10 presence test");
-    athReady = i2cScan.waitFor(ATH_10_I2C_ADDR, 1000); // scan to know witch others devices are connected
+    athReady = i2cScan.waitFor(ATH_10_I2C_ADDR, 1000); // scan to know if AHT-10 (temperature and hygrometrie) is accessible
     trace("I2C ath-10 ready = " + String(athReady));
     i2cScan.doScan(); // scan to know witch others devices are connected
     //bmp180.init();
@@ -67,6 +68,11 @@ void setup()
         trace("ath-10 initialization");
         aht10.init();
     }
+    */
+    trace("ath-10 initialization");
+    aht10.init();
+    i2cScan.doScan(); // scan to know witch others devices are connected
+
     trace("irReceiver initialization");
     irReceiver.init();
     trace("WiFi server initialization");
