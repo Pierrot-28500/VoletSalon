@@ -8,24 +8,24 @@ CLS_Mcp23017::CLS_Mcp23017()
 
 void CLS_Mcp23017::init()
 {
-    mcp.begin();
+    mcp.begin_I2C();
 
-        mcp.pullUp(15, 1);
-    mcp.pullUp(14, 1);
-    mcp.pullUp(13, 1);
-    mcp.pullUp(12, 1);
-    mcp.pullUp(11, 1);
-    mcp.pullUp(10, 1);
-    mcp.pullUp(9, 1);
-    mcp.pullUp(8, 1);
+    mcp.pinMode(15, INPUT_PULLUP);
+    mcp.pinMode(14, INPUT_PULLUP);
+    mcp.pinMode(13, INPUT_PULLUP);
+    mcp.pinMode(12, INPUT_PULLUP);
+    mcp.pinMode(11, INPUT_PULLUP);
+    mcp.pinMode(10, INPUT_PULLUP);
+    mcp.pinMode(9, INPUT_PULLUP);
+    mcp.pinMode(8, INPUT_PULLUP);
 
-    mcp.pullUp(7, 1);
-    mcp.pullUp(6, 1);
-    mcp.pullUp(5, 1);
-    mcp.pullUp(4, 1);
+    mcp.pinMode(7, INPUT_PULLUP);
+    mcp.pinMode(6, INPUT_PULLUP);
+    mcp.pinMode(5, INPUT_PULLUP);
+    mcp.pinMode(4, INPUT_PULLUP);
 
-    mcp.pullUp(3, 1); // Shutter btn up request
-    mcp.pullUp(2, 1); // Shutter btn down request
+    mcp.pinMode(3, 1); // Shutter btn up request
+    mcp.pinMode(2, 1); // Shutter btn down request
     /*
     mcp.pullUp(1, 1);
     mcp.pullUp(0, 1);
@@ -57,8 +57,9 @@ void CLS_Mcp23017::readTest()
 
 void CLS_Mcp23017::setUnConnected(uint8_t pin)
 {
-    mcp.pinMode(pin, INPUT);
-    mcp.pullUp(pin, 1);
+    mcp.pinMode(pin, INPUT_PULLUP);
+    //mcp.pinMode(pin, INPUT);
+    //mcp.pullUp(pin, 1);
 }
 
 void CLS_Mcp23017::pinMode(uint8_t pin, uint8_t mode)
@@ -68,7 +69,7 @@ void CLS_Mcp23017::pinMode(uint8_t pin, uint8_t mode)
 
 void CLS_Mcp23017::pullUp(uint8_t pin, int poolUp)
 {
-    mcp.pullUp(pin, poolUp);
+    mcp.pinMode(pin, poolUp);
 }
 
 uint8_t CLS_Mcp23017::digitalRead(uint8_t pin)

@@ -4,7 +4,7 @@
 #ifndef _CLS_MCP_23017
 #define _CLS_MCP_23017
 
-#include <Adafruit_MCP23017.h>
+#include <Adafruit_MCP23X17.h>
 
 #define MCP_I2C_ADDR 0x20
 
@@ -23,7 +23,7 @@ public:
     void digitalWrite(uint8_t pin, uint8_t pValue);
 
 protected:
-    Adafruit_MCP23017 mcp;
+    Adafruit_MCP23X17 mcp;
     unsigned long lastReadTime = 0;
 };
 

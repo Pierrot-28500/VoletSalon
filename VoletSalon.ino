@@ -1,4 +1,3 @@
-
 #include <Arduino.h>
 #include <Wire.h>
 
@@ -52,7 +51,7 @@ void setup()
     trace("i2C initialization");
     i2cScan.init();
     trace("waiting for MCP23017");
-    i2cScan.waitFor(MCP23017_ADDRESS); // wait for I2C GPIOs
+    i2cScan.waitFor(MCP_I2C_ADDR); // wait for I2C GPIOs
     trace("Mcp23017 GPIOs initialization");
     mcp23017.init();
     trace("shutter initialization");
